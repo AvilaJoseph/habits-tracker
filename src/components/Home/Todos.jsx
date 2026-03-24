@@ -1,10 +1,13 @@
-import spotifyLogo from "./../../assets/icons/spotify-icon.svg";
 import { useContext } from "react";
 import { HabitsContext } from "./../../state/HabitsContext";
 import { SquareCheckBig, Square } from 'lucide-react'
 
 export function Todos() {
   const { state } = useContext(HabitsContext);
+  const completedCount = state.habits.filter(
+    (habit) => habit.completed || (Array.isArray(habit.completedDates) && habit.completedDates.length > 0)
+  ).length;
+  const pendingCount = Math.max(state.habits.length - completedCount, 0);
 
   return (
     <section className="w-full">
@@ -36,7 +39,7 @@ export function Todos() {
                 <div className="h-5 w-5 rounded-md border border-slate-200" />
               </div>
             ) : (
-              state.habits.slice(0, 3).map((habit) => (
+              state.habits.slice(0, 2).map((habit) => (
                 <div className="flex items-start justify-between rounded-2xl border border-slate-100 bg-white p-3 shadow-[0_8px_16px_rgba(15,23,42,0.06)]" key={habit.id}>
                   {habit.completed ? (
                     <>
@@ -77,15 +80,31 @@ export function Todos() {
           </div>
         </div>
 
-        <div className="w-full rounded-2xl bg-white px-4 py-3 flex items-center justify-between gap-4 shadow-[0_10px_22px_rgba(15,23,42,0.08)]">
-          <div className="flex items-center gap-3">
-            <img src={spotifyLogo} alt="Music icon" className="h-10 w-10 rounded-xl" />
-            <div className="flex flex-col leading-tight">
-              <p className="text-sm font-semibold text-slate-800">Connect Music</p>
-              <p className="text-xs text-slate-500">Use playlists as motivation checkpoints</p>
+        <div className="w-full rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_8px_18px_rgba(15,23,42,0.08)]">
+          <div className="flex items-center justify-between">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">Quick summary</p>
+            <span className="text-xs text-slate-500">Today</span>
+          </div>
+
+          <div className="mt-3 grid grid-cols-2 gap-2">
+            <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-2">
+              <p className="text-[11px] uppercase tracking-[0.08em] text-emerald-700">Done</p>
+              <p className="mt-1 text-lg font-semibold text-emerald-900">{completedCount}</p>
+            </div>
+            <div className="rounded-xl border border-amber-200 bg-amber-50 px-3 py-2">
+              <p className="text-[11px] uppercase tracking-[0.08em] text-amber-700">Pending</p>
+              <p className="mt-1 text-lg font-semibold text-amber-900">{pendingCount}</p>
             </div>
           </div>
-          <button className="shrink-0 rounded-xl bg-emerald-700 px-4 py-2 text-xs font-medium text-white">Connect</button>
+        </div>
+
+        <div className="w-full rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_8px_18px_rgba(15,23,42,0.08)]">
+          <div className="flex items-center justify-between">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">Focus cue</p>
+            <span className="text-xs text-slate-500">Now</span>
+          </div>
+          <p className="mt-2 text-sm font-semibold text-slate-900">Finish one pending item before starting a new one.</p>
+          <p className="mt-1 text-xs text-slate-500">Small completions keep your streak stable and reduce mental load.</p>
         </div>
       </div>
     </section>
