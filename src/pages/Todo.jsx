@@ -13,7 +13,6 @@ export function Todo() {
                     <div className="view-shell flex flex-col leading-tight">
                         <h2 className="view-title">To-Do</h2>
                         <h2 className="view-subtitle">Organize your tasks and stay focused every day</h2>
-                        <span className="surface-divider"></span>
                         <FilterTodo isTodoModalOpen={isTodoModalOpen} setIsTodoModalOpen={setIsTodoModalOpen}/>
                         <ListTodo isTodoModalOpen={isTodoModalOpen} setIsTodoModalOpen={setIsTodoModalOpen}/>
                     </div>

@@ -67,14 +67,20 @@ export function ListHabits({ habitModalOpen, setHabitModalOpen }) {
 
           <tbody>
             {state.habits.length === 0 ? (
-              <tr className="text-left border-b border-slate-200 justify-center">
-                <td className="table-cell" colSpan={5}>
+              <tr className="text-left justify-center">
+                <td className="table-cell" colSpan={4}>
                   No habits yet
                 </td>
               </tr>
             ) : (
-              state.habits.map((habit) => (
-                <tr key={habit.id} className="border-b border-slate-200 hover:bg-slate-50/70">
+              state.habits.map((habit, index) => (
+                <tr
+                  key={habit.id}
+                  className={[
+                    "hover:bg-slate-50/70",
+                    index !== state.habits.length - 1 ? "border-b border-slate-200" : "",
+                  ].join(" ")}
+                >
                   <td className="table-cell">{habit.name}</td>
                   <td className="table-cell">
                     <span className="btn-pill border-size-sm bg-emerald-50 text-emerald-700 border border-emerald-200">{habit.frequency}</span>

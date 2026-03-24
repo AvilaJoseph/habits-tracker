@@ -14,7 +14,6 @@ export function Habits() {
                     <div className="view-shell flex flex-col leading-tight">
                         <h2 className="view-title">Habits</h2>
                         <h2 className="view-subtitle">Track your habits and stay on top of your goals</h2>
-                        <span className="surface-divider"></span>
                         <FilterHabits habitModalOpen={isHabitModalOpen} setHabitModalOpen={setIsHabitModalOpen} />
                         <ListHabits habitModalOpen={isHabitModalOpen} setHabitModalOpen={setIsHabitModalOpen}/>
                     </div>

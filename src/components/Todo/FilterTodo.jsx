@@ -12,8 +12,8 @@ export function FilterTodo({isTodoModalOpen, setIsTodoModalOpen}) {
           <Search className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
           <input type="text" placeholder="Search todos..." className="input-field search-input"/>
         </div>
-        <button onClick={() => setShowFilters(!showFilters)} className="inline-flex md:hidden icon-btn"><SlidersHorizontal className="h-4 w-4" /></button>
-        <button className="inline-flex md:hidden btn-primary h-9 w-9 p-0 items-center justify-center" onClick={()=>setIsTodoModalOpen(true)}><Plus className="h-4 w-4" /></button>
+        <button onClick={() => setShowFilters(!showFilters)} className="inline-flex md:hidden border border-gray-300 p-2 rounded-md"><SlidersHorizontal className="h-4 w-4" /></button>
+        <button className="inline-flex md:hidden p-2 rounded-md bg-[#0f766e]" onClick={()=>setIsTodoModalOpen(true)}><Plus className="h-4 w-4 text-white" /></button>
       </div>
 
       <div className="hidden md:flex flex-col sm:flex-row gap-3 w-full md:w-auto">

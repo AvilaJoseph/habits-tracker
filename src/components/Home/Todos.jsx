@@ -11,8 +11,8 @@ export function Todos() {
       <div className="mb-4 rounded-2xl border border-slate-200/70 bg-white/75 p-4 backdrop-blur-sm shadow-[0_10px_22px_rgba(15,23,42,0.08)]">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Task board</p>
-            <h3 className="mt-1 text-lg font-semibold text-slate-900">Today&apos;s Todos</h3>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">Daily planner</p>
+            <h3 className="mt-1 text-lg font-semibold text-slate-900">Today&apos;s Queue</h3>
           </div>
           <button className="text-xs text-slate-500 hover:text-slate-800">View details</button>
         </div>
@@ -79,13 +79,13 @@ export function Todos() {
 
         <div className="w-full rounded-2xl bg-white px-4 py-3 flex items-center justify-between gap-4 shadow-[0_10px_22px_rgba(15,23,42,0.08)]">
           <div className="flex items-center gap-3">
-            <img src={spotifyLogo} alt="Spotify Logo" className="h-10 w-10 rounded-xl" />
+            <img src={spotifyLogo} alt="Music icon" className="h-10 w-10 rounded-xl" />
             <div className="flex flex-col leading-tight">
-              <p className="text-sm font-semibold text-slate-800">Connect Spotify</p>
+              <p className="text-sm font-semibold text-slate-800">Connect Music</p>
               <p className="text-xs text-slate-500">Use playlists as motivation checkpoints</p>
             </div>
           </div>
-          <button className="shrink-0 rounded-xl bg-emerald-700 px-4 py-2 text-xs font-medium text-white">Link</button>
+          <button className="shrink-0 rounded-xl bg-emerald-700 px-4 py-2 text-xs font-medium text-white">Connect</button>
         </div>
       </div>
     </section>

@@ -10,7 +10,7 @@ export function Wheather() {
       <WeatherCard />
 
       <div className="flex items-center justify-between px-1">
-        <h3 className="text-base font-semibold text-slate-800">Should Do</h3>
+        <h3 className="text-base font-semibold text-slate-800">Next Up</h3>
         <button className="text-xs text-slate-500 hover:text-slate-700">View details</button>
       </div>
 
@@ -37,7 +37,7 @@ export function Wheather() {
 
       <div className="w-full">
         <div className="flex items-center justify-between px-1">
-          <h3 className="text-base font-semibold text-slate-800">Weekly Challenge</h3>
+          <h3 className="text-base font-semibold text-slate-800">Weekly Focus</h3>
           <button className="text-xs text-slate-500 hover:text-slate-700">View details</button>
         </div>
 

@@ -9,11 +9,10 @@ export function OptionsSettings({ value, setValue }) {
                             onClick={() => setValue(option)}
                             className={`flex-shrink-0 px-3 py-2 text-sm md:text-base border rounded-xl transition ${
                                 value === option
-                                    ? 'text-white bg-slate-900 border-slate-900'
+                                    ? 'text-white bg-[#0f766e] border-[#0f766e]'
                                     : 'text-slate-600 border-slate-300 bg-white'
                             }`}
-                            key={option}
-                        >
+                            key={option}>
                             {option}
                         </button>
                     ))}

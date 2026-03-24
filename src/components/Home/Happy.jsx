@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Plus } from "lucide-react";
 import { HabitModal } from "../Modals/HabitModal";
 import { CalendarWidget } from "./CalendarWidget";
+import googlePlayIcon from "../../assets/icons/google-play.svg";
 
 export function Happy() {
   const navigate = useNavigate();
@@ -45,16 +46,13 @@ export function Happy() {
         </div>
 
         <div className="w-full relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#1f4037] to-[#132820] px-6 pb-6 pt-12 xl:px-5 xl:pb-[14px] xl:pt-[34px] text-center text-white shadow-[0_14px_28px_rgba(15,23,42,0.2)]">
-          <div className="absolute -top-9 left-1/2 -translate-x-1/2">
-            <div className="h-20 w-20 rounded-3xl bg-white/20 border border-white/25 backdrop-blur-sm" />
-          </div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,215,160,0.22),rgba(255,255,255,0)_40%)]" />
-          <div className="absolute top-5 right-5">
-            <div className="h-7 w-7 rounded-full bg-amber-200/40" />
-          </div>
           <h3 className="relative text-lg font-semibold leading-snug">Take your streaks <br />outside the desktop</h3>
           <p className="relative mt-2 text-sm text-emerald-100">Install the mobile build and keep progress synced.</p>
-          <button className="relative mt-4 w-full rounded-2xl bg-white py-2.5 text-sm font-semibold text-slate-900 shadow-sm">Get mobile app</button>
+          <button className="relative mt-4 w-full rounded-2xl bg-white py-2.5 text-sm font-semibold text-slate-900 shadow-sm inline-flex items-center justify-center gap-2">
+            <img src={googlePlayIcon} alt="App store icon" className="h-4 w-4" />
+            <span>Get mobile app</span>
+          </button>
         </div>
       </aside>
     </>

@@ -13,12 +13,12 @@ export function FilterHabits({habitModalOpen, setHabitModalOpen}) {
             <input type="text" placeholder="Search habits..." className="input-field search-input" />
           </div>
 
-          <button onClick={() => setShowFilters(!showFilters)} className="inline-flex md:hidden icon-btn">
+          <button onClick={() => setShowFilters(!showFilters)} className="inline-flex md:hidden p-2 rounded-md border border-slate-300 text-slate-500">
             <SlidersHorizontal className="h-4 w-4" />
           </button>
 
-          <button onClick={() => setHabitModalOpen(true)} className="inline-flex md:hidden btn-primary h-9 w-9 p-0 items-center justify-center">
-            <Plus className="h-4 w-4" />
+          <button onClick={() => setHabitModalOpen(true)} className="inline-flex md:hidden p-2 rounded-md text-white bg-[#0f766e]">
+            <Plus className="h-4 w-4 text-white" />
           </button>
         </div>
 

@@ -96,8 +96,14 @@ export function ListTodo({ isTodoModalOpen, setIsTodoModalOpen }) {
                 <td colSpan={7} className="table-cell text-center">No to do yet</td>
               </tr>
             ) : (
-              state.todos.map((todo) => (
-                <tr key={todo.id} className="border-b border-slate-200 hover:bg-slate-50/70">
+              state.todos.map((todo, index) => (
+                <tr
+                  key={todo.id}
+                  className={[
+                    "hover:bg-slate-50/70",
+                    index !== state.todos.length - 1 ? "border-b border-slate-200" : "",
+                  ].join(" ")}
+                >
                   <td className="table-cell text-slate-700">{todo.title}</td>
                   <td className="table-cell">{todo.description || "-"}</td>
                   <td className="table-cell">
